@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Arithmetic Operations</title>
+    <style>
+      body {
+        text-align: center;
+        margin-top: 0%;
+        background-color: rgb(249, 255, 167);
+      }
+
+      .btn {
+        background-color: rgb(10, 1, 1);
+        box-shadow: 2px 2px rgb(132, 39, 39);
+        color: rgb(248, 252, 250);
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        border-radius: 7px;
+        border: none;
+        font-size: 20px;
+        padding: 10px;
+      }
+
+      #bn {
+        margin-left: 10px;
+      }
+
+      #btn1 {
+        margin-right: 0px;
+        margin-right: 170px;  
+      }
+
+      #inp1,#inp2 {
+        height: 50%;
+        width: 80%;
+        border: none;
+        background-color: rgb(172, 172, 172);
+        font-size: 20px;
+        padding: 5px;
+      }
+      #resultCanvas {
+        background-color: azure;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <h1 style="color: rgb(79, 79, 79)">Find the two numbers</h1>
+    <div id="container">
+        <button class="btn" id="btn1" onclick="calculate()">Start</button>
+        <button class="btn" id="re">Next</button><br /><br />
+    </div>
+
+    <div>
+      <!-- Input fields for the two numbers -->
+      <input type="number" id="inp1" placeholder="1st No" /><br/><br/>
+      <input type="number" id="inp2" placeholder="2nd No" /><br/><br/>
+      <button class="btn" onclick="check()">Check</button><br /><br />
+    </div>
+
+    <canvas
+      id="resultCanvas"
+      style="border: 1px solid grey"
+      width="250"
+      height="250"
+    >
+    </canvas
+    ><br /><br />
+ 
+    <h1 id="h"></h2>
+
+    <!-- Button to trigger the arithmetic operations -->
+
+    <button id="bn" class="btn" onclick="result()">show answer</button>
+
+    <!-- Canvas element for drawing results -->
+
+    <script>
+      document.getElementById("re").addEventListener("click", function () {
+        location.reload();
+      });
+
+      var num1, num2;
+
+      num1 = Math.floor(Math.random() * 10 + 3);
+      num2 = Math.floor(Math.random() * 10);
+
+      function calculate() {
+        // Perform arithmetic operations
+        let add = num1 + num2;
+        let sub = num1 - num2;
+        let mul = num1 * num2;
+        let div = num2 !== 0 ? num1 / num2 : "Cannot divide by zero"; // Handle division by zero
+
+        // Draw the results on the canvas
+        let canvas = document.getElementById("resultCanvas");
+        let ctx = canvas.getContext("2d");
+
+        //ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+
+        ctx.font = "16px Arial";
+        ctx.fillStyle = "black";
+        ctx.fillText("Addition: " + add, 10, 30);
+        ctx.fillText("Subtraction: " + sub, 10, 60);
+        ctx.fillText("Multiplication: " + mul, 10, 90);
+        ctx.fillText("Division: " + div, 10, 120);
+      }
+
+      function result() {
+        let canvas = document.getElementById("resultCanvas");
+        let ctx = canvas.getContext("2d");
+
+        //ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+
+        ctx.font = "16px Arial";
+        ctx.fillStyle = "black";
+        ctx.fillText("First number is: " + num1, 10, 150);
+        ctx.fillText("Second number is: " + num2, 10, 180);
+      }
+
+      function check() {
+        let val1 = document.getElementById("inp1").value;
+        let val2 = document.getElementById("inp2").value;
+
+        let canvas = document.getElementById("resultCanvas");
+        let ctx = canvas.getContext("2d");
+
+        ctx.font = "16px Arial";
+        ctx.fillStyle = "black";
+
+      
+        if (val1 == num1) {
+          // If the first number is correct, display the correct message
+          //ctx.fillText("First number correct!", 10, 210);
+          document.getElementById("h").innerHTML = "first value is correct";
+
+        } else {
+          // If the first number is incorrect, display the wrong message
+          // ctx.fillText("First number wrong!", 10, 210);
+          document.getElementById("h").innerHTML = " first value is wrong!";
+        }
+
+        if (val1 == num2) {
+          // If the first number is correct, display the correct message
+          //ctx.fillText("First number correct!", 10, 210);
+
+          document.getElementById("h").innerHTML = "Second value is correct";
+        } else {
+          // If the first number is incorrect, display the wrong message
+          // ctx.fillText("First number wrong!", 10, 210);
+          document.getElementById("h").innerHTML = " Second value is wrong!";
+        }
+
+       
+      }
+    </script>
+  </body>
+</html>
