@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic Arithmetic Operations</title>
+  <link rel="stylesheet" href="game.css">
+  <script src="game.js"></script>
+</head>
+
+<body>
+
+  <h1 style="color: rgb(79, 79, 79)">Find the two numbers</h1>
+  <div id="container">
+    <button class="btn" id="btn1" onclick="calculate()">Start</button>
+    <button class="btn" id="re">Next</button><br /><br />
+  </div>
+
+  <div>
+    <!-- Input fields for the two numbers -->
+    <input type="number" id="inp1" placeholder="1st No" min="2" max="10" />
+    <input type="number" id="inp2" placeholder="2nd No" /><br /><br />
+    <button class="btn" id="ch" onclick="check()">Check</button>
+    <button id="bn" class="btn" onclick="result()">show answer</button>
+  </div><br>
+  <p>Your score: <span id="score">0</span></p>
+
+  <canvas id="resultCanvas" style="border: 1px solid grey" width="250" height="250">
+  </canvas><br />
+  <div style="display: inline; padding-left: 0px; font-size: x-large;">
+    <p id="h1"></p>
+    <p id="h2"></p>
+  </div>
+
+
+  <!-- Button to trigger the arithmetic operations -->
+
+  <!-- Canvas element for drawing results -->
+</body>
+
+</html>

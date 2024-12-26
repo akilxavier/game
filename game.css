@@ -1,0 +1,42 @@
+body {
+    text-align: center;
+    background-color: rgb(249, 255, 167);
+  }
+
+  .btn {
+    background-color: rgb(0, 95, 0);
+    box-shadow: 2px 2px rgb(0, 0, 0);
+    color: rgb(248, 252, 250);
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    border-radius: 7px;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  #bn {
+    margin-left: 10px;
+    background-color: firebrick;
+    margin-left: 50px;
+  }
+  #ch{
+    background-color: firebrick;
+  }
+
+  #btn1 {
+    margin-right: 0px;
+    margin-right: 170px;  
+  }
+
+  #inp1,#inp2 {
+    height: 50%;
+    width: 30%;
+    border: rgb(53, 53, 53) solid;
+    border-radius: 8px;
+    background-color: rgb(172, 172, 172);
+    font-size: 20px;
+    padding: 5px;
+  }
+  #resultCanvas {
+    background-color: azure;
+  }
